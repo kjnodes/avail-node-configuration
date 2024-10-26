@@ -67,7 +67,7 @@ screen_main() {
 	echo -e 'Select an option:\e[0m' >&2
 	( [ "x$AVAIL_VERSION_OUT" != 'x' ] ) && echo -ne '\033[0;90m' >&2
 	echo -e '1 - Initialize service\e[0m' >&2
-	( [ "x$AVAIL_VERSION_OUT" == 'x' ] ) && echo -ne '\033[0;90m' >&2
+	( [ "x$AVAIL_VERSION_OUT" == "x${KJ_AVAIL_NODE_VERSION}" ] ) && echo -ne '\033[0;90m' >&2
 	echo -e '2 - Upgrade service\e[0m' >&2
 	( [ "x$AVAIL_VERSION_OUT" == 'x' ] ) && echo -ne '\033[0;90m' >&2
 	echo -e '3 - Restart services\e[0m' >&2
