@@ -125,7 +125,7 @@ screen_init() {
 		screen_main
 		return 1
 	fi
-	if [ -e '/usr/local/bin/avail' ]; then
+	if [ -e '/usr/local/bin/avail-node' ]; then
 		echo 'Found pre-existing `avail-node` binary.' >&2
 		echo 'Please execute removal first, if you want a clean installation.' >&2
 		screen_main
@@ -229,7 +229,7 @@ screen_upgrade() {
 		screen_main
 		return 1
 	fi
-	if [ ! -e '/usr/local/bin/avail' ]; then
+	if [ ! -e '/usr/local/bin/avail-node' ]; then
 		echo 'Did not found `avail-node` binary.' >&2
 		echo 'Is Avail actually running on this system?' >&2
 		screen_main
