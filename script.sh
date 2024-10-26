@@ -191,6 +191,7 @@ screen_init() {
 		--name "$moniker" \
 		--prometheus-external \
 		--rpc-external \
+		--rpc-methods safe \
 		--rpc-cors all
 
 		Restart=on-failure
@@ -400,8 +401,7 @@ screen_monitor() {
 	echo -e "\e[1m\e[32mUpdating configuration files...\e[0m" >&2
 	sed -i -e "s'YOUR_TELEGRAM_BOT_TOKEN'${telegram_bot_token}'" "$HOME/avail-node-monitoring/prometheus/alert_manager/alertmanager.yml"
 	sed -i -e "s'YOUR_TELEGRAM_USER_ID'${telegram_user_id}'" "$HOME/avail-node-monitoring/prometheus/alert_manager/alertmanager.yml"
-	sed -i -e "s'YOUR_NODE_IP:COMET_PORT'${myip}:26660'" "$HOME/avail-node-monitoring/prometheus/prometheus.yml"
-	sed -i -e "s'YOUR_NODE_IP:GETH_PORT'${myip}:6060'" "$HOME/avail-node-monitoring/prometheus/prometheus.yml"
+	sed -i -e "s'YOUR_NODE_IP:PORT'${myip}:9615'" "$HOME/avail-node-monitoring/prometheus/prometheus.yml"
 
 	echo -e "\e[1m\e[32mStarting services...\e[0m" >&2
 	pushd "$HOME/avail-node-monitoring" >/dev/null
