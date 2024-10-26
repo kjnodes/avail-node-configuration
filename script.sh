@@ -285,17 +285,17 @@ screen_restart() {
 
 screen_logs() {
 
-	# Check whether services already exist, and abort if not.
-	if ! systemctl list-unit-files -q avail.service >/dev/null; then
-		echo 'Aborting! Did not find `avail` service file installed.' >&2
-		echo 'Is Avail actually running on this system?' >&2
-		screen_main
-		return 1
-	fi
+  # Check whether services already exist, and abort if not.
+  if ! systemctl list-unit-files -q avail.service >/dev/null; then
+    echo 'Aborting! Did not find `avail` service file installed.' >&2
+    echo 'Is Avail actually running on this system?' >&2
+    screen_main
+    return 1
+  fi
 
-	trap 'exit 0' INT; journalctl -f -ocat --no-pager -u avail.service | ccze -A
+  (trap 'exit 0' INT; journalctl -f -ocat --no-pager -u avail.service | ccze -A)
 
-	screen_main
+  screen_main
 
 }
 
