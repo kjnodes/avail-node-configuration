@@ -74,7 +74,7 @@ screen_main() {
 	( [ "x$AVAIL_VERSION_OUT" == 'x' ] ) && echo -ne '\033[0;90m' >&2
 	echo -e '4 - Show service logs\e[0m' >&2
 	( [ "x$AVAIL_VERSION_OUT" == 'x' ] ) && echo -ne '\033[0;90m' >&2
-	echo -e '5 - Reset local data to pruned snapshot\e[0m' >&2
+	echo -e '5 - Reset local data to snapshot\e[0m' >&2
 	( [ "x$AVAIL_VERSION_OUT" == 'x' ] ) && echo -ne '\033[0;90m' >&2
 	echo -e '6 - Configure local monitoring solution\e[0m' >&2
 	echo -e '9 - Remove service and data\e[0m' >&2
@@ -273,6 +273,8 @@ screen_restart() {
 		screen_main
 		return 1
 	fi
+
+	echo -e '\e[1m\e[32mRestarting the service...\e[0m' >&2
 
 	sudo systemctl restart avail.service
 
