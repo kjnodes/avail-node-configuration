@@ -126,7 +126,7 @@ screen_init() {
 		return 1
 	fi
 	if [ -e '/usr/local/bin/avail' ]; then
-		echo 'Found pre-existing `avail` binary.' >&2
+		echo 'Found pre-existing `avail-node` binary.' >&2
 		echo 'Please execute removal first, if you want a clean installation.' >&2
 		screen_main
 		return 1
@@ -225,6 +225,12 @@ screen_upgrade() {
 	# Check whether services already exist, and abort if not.
 	if ! systemctl list-unit-files -q avail.service >/dev/null; then
 		echo 'Aborting! Did not find `avail` service file installed.' >&2
+		echo 'Is Avail actually running on this system?' >&2
+		screen_main
+		return 1
+	fi
+	if [ ! -e '/usr/local/bin/avail' ]; then
+		echo 'Did not found `avail-node` binary.' >&2
 		echo 'Is Avail actually running on this system?' >&2
 		screen_main
 		return 1
