@@ -152,6 +152,9 @@ screen_init() {
 		esac
 	done
 	shift "$((OPTIND-1))"
+	
+	# Obtain usable values for later.
+	[ "x$moniker" == 'x' ] && read -e -p '> Enter your moniker/name for the node: ' moniker
 
 	# Update OS packages for sanity.
 	echo -e '\e[1m\e[32mUpdating system packages...\e[0m' >&2
