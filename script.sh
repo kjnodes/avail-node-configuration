@@ -326,7 +326,7 @@ screen_snapshot() {
 	rm -rf "$HOME/.avail/data/chains/avail_da_mainnet/paritydb"
 
 	echo -e "\e[1m\e[32mDownloading latest available snapshot...\e[0m" >&2
-	curl -L https://snapshots.kjnodes.com/avail/snapshot_latest.tar.lz4 | tar -Ilz4 -xf - -C "$HOME/.avail/avail"
+	curl -L "https://snapshots.kjnodes.com/avail/snapshot_latest.tar.lz4" | tar -Ilz4 -xf - -C "$HOME/.avail/data/chains/avail_da_mainnet"
 
 	echo -e "\e[1m\e[32mStarting services...\e[0m" >&2
 	sudo systemctl start avail.service
