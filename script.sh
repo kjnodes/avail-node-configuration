@@ -242,11 +242,6 @@ screen_upgrade() {
 		return 1
 	fi
 
-	# Update OS packages for sanity.
-	echo -e '\e[1m\e[32mUpdating system packages...\e[0m' >&2
-	sudo apt-get -qq update
-	sudo apt-get -qqy upgrade
-
 	# Prepare directories for downloads.
 	KJ_TMP_DIR="$(mktemp -dqt avail.XXXXXXXXXX)"
 	trap "rm -rf '$KJ_TMP_DIR'" EXIT # and always clean up after ourselves.
