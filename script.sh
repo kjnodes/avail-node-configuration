@@ -167,8 +167,8 @@ screen_init() {
 	KJ_TMP_DIR="$(mktemp -dqt avail.XXXXXXXXXX)"
 	trap "rm -rf '$KJ_TMP_DIR'" EXIT # and always clean up after ourselves.
 
-	# Download Avail consensus binary.
-	echo -e "\e[1m\e[32mDownloading Avail consensus client v$KJ_AVAIL_TAG_VERSION...\e[0m" >&2
+	# Download Avail binary.
+	echo -e "\e[1m\e[32mDownloading Avail node v$KJ_AVAIL_TAG_VERSION...\e[0m" >&2
 	curl -L https://github.com/availproject/avail/releases/download/v$KJ_AVAIL_TAG_VERSION/x86_64-ubuntu-$(lsb_release -sr | tr -d .)-avail-node.tar.gz | tar -xz -C /usr/local/bin
 	sudo chown 0:0 /usr/local/bin/avail-node
 	sudo chmod 755 /usr/local/bin/avail-node
