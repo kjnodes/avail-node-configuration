@@ -185,7 +185,11 @@ screen_init() {
 		ExecStart=$(which avail-node) \
 		--base-path $HOME/.avail/data/ \
 		--chain mainnet \
-		--name "$moniker"
+		--name "$moniker" \
+		--prometheus-external \
+		--rpc-external \
+		--rpc-cors all
+
 		Restart=on-failure
 		RestartSec=10
 		LimitNOFILE=65535
