@@ -1,6 +1,6 @@
 # Avail Node Configuration Script
 
-This project provides a Bash script to initialize and manage a Avail testnet node. The script provides multiple features such as initializing and upgrading the services, observing logs, and catching up quickly using a snapshot.
+This project provides a Bash script to initialize and manage a Avail mainnet node. The script provides multiple features such as initializing and upgrading the services, observing logs, and catching up quickly using a snapshot.
 
 ## Quick Start
 
