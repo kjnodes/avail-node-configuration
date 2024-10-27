@@ -14,13 +14,15 @@ bash <(curl -sL https://github.com/kjnodes/avail-node-configuration/raw/refs/hea
 
 ## Features
 
-Initialize Service: Installs the Avail node with all dependencies.
-Upgrade Service: Updates the Avail node binaries.
-Restart Services: Restarts the Avail service.
-Show Service Logs: Streams real-time logs for the Avail service.
-Reset Local Data to Snapshot: Downloads the latest snapshot to reset the node, replacing local data.
-Configure Local Monitoring Solution: Sets up Prometheus and Grafana monitoring with a pre-installed dashboard and Telegram Alerting.
-Remove Service and Data: Deletes all installed services, binaries, configurations, and chain data for a clean reinstall.
+Functionality overview:
+
+- Initialize Service: Installs the Avail node with all dependencies.
+- Upgrade Service: Updates the Avail node binaries.
+- Restart Services: Restarts the Avail service.
+- Show Service Logs: Streams real-time logs for the Avail service.
+- Reset Local Data to Snapshot: Downloads the latest snapshot to reset the node, replacing local data.
+- Configure Local Monitoring Solution: Sets up Prometheus and Grafana monitoring with a pre-installed dashboard and Telegram Alerting.
+- Remove Service and Data: Deletes all installed services, binaries, configurations, and chain data for a clean reinstall.
 
 ## Monitoring Setup
 
