@@ -14,13 +14,13 @@ bash <(curl -sL https://github.com/kjnodes/avail-node-configuration/raw/refs/hea
 
 ## Features
 
-- Node Initialization: Set up the Avail testnet node from scratch, including Golang, Cosmovisor, and the Avail/Geth binaries.
-- Upgrade Management: Seamlessly prepare for upgrades for your node when a new version is available.
-- Snapshot Restore: Easily reset your node to the latest snapshot, with support for both pruned and archival data.
-- Service Restart: Simply perform node service restart.
-- Log Monitoring: View real-time logs of the Avail and Geth clients.
-- Service Monitoring: Optional setup of a monitoring solution using Docker, Prometheus, and Grafana with Telegram alert integration.
-- Service Removal: Cleanly remove all traces of the Avail and Geth services, including binaries and data.
+Initialize Service: Installs the Avail node with all dependencies.
+Upgrade Service: Updates the Avail node binaries.
+Restart Services: Restarts the Avail service.
+Show Service Logs: Streams real-time logs for the Avail service.
+Reset Local Data to Snapshot: Downloads the latest snapshot to reset the node, replacing local data.
+Configure Local Monitoring Solution: Sets up Prometheus and Grafana monitoring with a pre-installed dashboard and Telegram Alerting.
+Remove Service and Data: Deletes all installed services, binaries, configurations, and chain data for a clean reinstall.
 
 ## Monitoring Setup
 
