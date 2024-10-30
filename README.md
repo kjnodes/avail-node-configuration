@@ -1,3 +1,7 @@
+<p align="center">
+  <img height="75" height="auto" src="https://services.kjnodes.com/assets/images/logos/avail.png">
+</p>
+
 # Avail Node Configuration Script
 
 This project provides a Bash script to initialize and manage a Avail mainnet node. The script provides multiple features such as initializing and upgrading the services, observing logs, and catching up quickly using a snapshot.
